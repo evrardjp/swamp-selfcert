@@ -1,6 +1,6 @@
 import { createSign, generateKeyPairSync, randomBytes } from "node:crypto";
 import { z } from "npm:zod@4";
-import type { ModelDefinition } from "jsr:@systeminit/swamp-testing";
+import type { ModelDefinition } from "jsr:@systeminit/swamp-testing@0.20260518.13";
 
 // @ts-ignore: Deno global available at bundle runtime
 const DenoCmd = Deno.Command;
@@ -257,7 +257,7 @@ export const model = {
   checks: {
     "fqdn-valid": {
       description: "Verify that fqdn is non-empty",
-      execute: async (context) => {
+      execute: (context) => {
         const { fqdn } = context.globalArgs;
         if (!fqdn || fqdn.trim().length === 0) {
           return { pass: false, errors: ["fqdn must not be empty"] };
@@ -299,9 +299,8 @@ export const model = {
             modulusLength: 4096,
             publicKeyEncoding: { type: "spki", format: "der" },
             privateKeyEncoding: { type: "pkcs8", format: "pem" },
-            // deno-lint-ignore no-explicit-any
           },
-        ) as any as { publicKey: Uint8Array; privateKey: string };
+        ) as unknown as { publicKey: Uint8Array; privateKey: string };
 
         const notBefore = new Date();
         const notAfter = new Date(notBefore.getTime() + days * 86_400_000);
