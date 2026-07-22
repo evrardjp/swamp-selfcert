@@ -1,6 +1,6 @@
 manifestVersion: 1
 name: "@evrardjp/selfcert"
-version: "2026.07.03.1"
+version: "2026.07.22.1"
 description: >-
   MOVED: this extension now lives in the consolidated swamp-extensions repository.
 repository: "https://github.com/evrardjp/swamp-extensions/tree/main/selfcert"
@@ -14,7 +14,6 @@ drivers: []
 datastores: []
 additionalFiles:
   - README.md
-  - LICENSE.txt
 labels:
   - moved
   - selfcert
