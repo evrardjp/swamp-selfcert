@@ -1,23 +1,8 @@
 # @evrardjp/selfcert
 
-Self-signed TLS certificate generator for swamp.
+This extension has moved to the consolidated `swamp-extensions` repository:
 
-Creates RSA-4096 certificates locally using `node:crypto` and stores the cert and private key in a swamp vault.
+https://github.com/evrardjp/swamp-extensions/tree/main/selfcert
 
-## Usage
-
-```yaml
-type: '@evrardjp/selfcert'
-arguments:
-  fqdn: example.local
-  ipSans:
-    - 192.168.1.1
-  vaultName: my-vault
-  certVaultKey: tls-cert
-  keyVaultKey: tls-key
-  days: 3650
-```
-
-## Methods
-
-- `generate` — Generate (or skip if already present) a self-signed certificate and store it in the vault.
+The active manifest, model source, tests, and package metadata now live under
+`selfcert/` in that repository.
